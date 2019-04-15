@@ -1,4 +1,38 @@
-<div>
-  <input type  = "text" [(ngModel)] = "name">
-  <p>{{ name }}</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">S3P</a>
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Posts<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Posts by top</a></li>
+              <li><a href="#">Posts by Following</a></li>
+              <li><a href="#">your posts</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">inbox</a></li>
+          <li><a href="#">Social</a></li>
+          <li><a href="#">wars</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+  </nav>
+<div class = "popularPosts">
+ <p>this is a popular post</p> 
 </div>
+<div class = "popularBattle">
+ <p>this is a popular battle</p> 
+</div>
+<div class = "trendingPost">
+ <p>this is a trending post. this can be removed if not enough time.</p> 
+</div>
+<div class = "yourBattle">
+ <p>this is you current battle</p> 
+</div>
+
