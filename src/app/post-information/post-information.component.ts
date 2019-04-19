@@ -13,3 +13,7 @@ export class PostInformationComponent implements OnInit {
   }
 
 }
+export class Posts {
+  constructor(UN,P,DN){}
+  Poster: string;
+}

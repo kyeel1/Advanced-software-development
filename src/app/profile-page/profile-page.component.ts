@@ -14,13 +14,20 @@ export class ProfilePageComponent implements OnInit {
 
 }
 export class User {
-  constructor(){}
+  constructor(UN,P,DN){this.UserName = UN,this.Password = P,this.DisplayName = DN}
   UserName: string;
   Password: string;
   DisplayName: string;
   Description: String;
   Picture: String;//stores the link to the picture
+  Followers: User[];
+  Following: User[];
   //groups: groups[];
   //messages: messages[];
   //posts: posts[];
+  //Addgroup(){};
+  //AddMessage(){};
+  //AddPicture(){};
+  //AddFollowers(){};
+  //AddFollowing(){};
 }
