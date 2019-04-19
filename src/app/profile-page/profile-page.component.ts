@@ -13,3 +13,14 @@ export class ProfilePageComponent implements OnInit {
   }
 
 }
+export class User {
+  constructor(){}
+  UserName: string;
+  Password: string;
+  DisplayName: string;
+  Description: String;
+  Picture: String;//stores the link to the picture
+  //groups: groups[];
+  //messages: messages[];
+  //posts: posts[];
+}
