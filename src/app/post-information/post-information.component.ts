@@ -12,8 +12,4 @@ export class PostInformationComponent implements OnInit {
   ngOnInit() {
   }
 
-}
-export class Posts {
-  constructor(UN,P,DN){}
-  Poster: string;
-}
+} 
