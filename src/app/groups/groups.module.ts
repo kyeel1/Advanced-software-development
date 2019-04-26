@@ -9,7 +9,15 @@ import { UserModule } from '../user/user.module';
   ]
 })
 export class GroupsModule {
+  constructor(name){this.GroupName = name}
   UserList : UserModule[];
   AdminList : UserModule[];
+  GroupName : String;
   //WarList : War[];
+  AddUser(user: UserModule):void {//adds a person to the group
+    this.UserList.push(user);
+  }
+  AddAdmin(admin: UserModule):void{
+    this.AdminList.push(admin);
+  }
 }

@@ -15,15 +15,25 @@ UpVotes:number;
 DownVotes:number;
 TotalVote:number;
 WhoVoted: UserModule[];
+
+UpdateTotal(){
+  this.TotalVote = this.UpVotes - this.DownVotes;
+  }
+  AddUpVote():void{
+  this.UpVotes += 1;
+  this.UpdateTotal();
+  }
+  AddDownVote():void{
+  this.DownVotes += 1;
+  this.UpdateTotal();
+  }  
+  keepTrack(voter : UserModule,upDown : String){//whenever someone votes on a post it will call this method and include who voted and which way they votes
+    this.WhoVoted.push(voter);
+    if(upDown == "up"){
+      this.AddUpVote();
+    }
+    else{
+      this.AddDownVote();
+    }
+  }
 }
-function UpdateTotal(){
-this.TotalVote = this.UpVotes - this.DownVotes;
-}
-function AddUpVote():void{
-this.UpVotes += 1;
-UpdateTotal();
-}
-function AddDownVote():void{
-this.DownVotes += 1;
-UpdateTotal();
-}  

@@ -22,13 +22,23 @@ export class UserModule {
     groups: GroupsModule[];
     //messages: messages[];
     //AddMessage(){};
-    //AddPicture(){};
-    //AddFollowers(){};
-    //AddFollowing(){};
+    AddPosts(post: PostsModule):void {//add posts to a users history
+      this.posts.push(post);
+     }
+     AddGroup(group: GroupsModule):void {//keeps track of all the groups a user is in
+      this.groups.push(group);
+     }
+     AddFollower(follower: UserModule):void {//adds a person to this persons followers list
+      this.Followers.push(follower);
+     }
+     AddFollowing(following: UserModule):void {//follows another person
+      this.Following.push(following);
+     }
+     AddPicture(picture: String):void {//saves a string of the file name of a picture where the file is located
+      this.Picture = picture;
+     }
+     AddDescription(description: String):void {//adds a description in the profile page
+      this.Description = description;
+     }
  }
- function AddPosts(post: PostsModule):void {
-  this.posts.push(post);
- }
- function AddGroup(group: GroupsModule):void {
-  this.groups.push(group);
- }
+ 
