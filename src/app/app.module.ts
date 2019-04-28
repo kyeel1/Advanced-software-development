@@ -10,6 +10,8 @@ import { YourTopPostsComponent } from './your-top-posts/your-top-posts.component
 import { PostInformationComponent } from './post-information/post-information.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { WarsComponent } from './wars/wars.component';
+import { BattlesComponent } from './battles/battles.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LogInComponent } from './log-in/log-in.component';
     YourTopPostsComponent,
     PostInformationComponent,
     ProfilePageComponent,
-    LogInComponent
+    LogInComponent,
+    WarsComponent,
+    BattlesComponent
   ],
   imports: [
     BrowserModule
