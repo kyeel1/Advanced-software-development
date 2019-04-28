@@ -4,6 +4,7 @@ import { GroupsModule } from '../groups/groups.module';
 import { UserModule } from '../user/user.module';
 import { PostsModule } from '../posts/posts.module';
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -48,4 +49,4 @@ export class DatabaseModule {
  let TGL = {group1,group2,group3};
  let TUL = {user1,user2,user3};
  let TPL = {post1,post2,post3,post4};
- let Database = new DatabaseModule(TGL,TUL,TPL);//the database that contains all the arrays
+export let Database = new DatabaseModule(TGL,TUL,TPL);//the database that contains all the arrays
