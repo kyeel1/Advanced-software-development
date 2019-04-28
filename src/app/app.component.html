@@ -1,38 +1,55 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <nav class="navbar navbar-inverse">
-        <a class="navbar-brand" href="#">S3P</a>
-        <ul class="nav navbar-nav">
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Posts<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Posts by top</a></li>
-              <li><a href="#">Posts by Following</a></li>
-              <li><a href="#">your posts</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">inbox</a></li>
-          <li><a href="#">Social</a></li>
-          <li><a href="#">wars</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-  </nav>
-<div class = "popularPosts">
- <p>this is a popular post</p> 
-</div>
-<div class = "popularBattle">
- <p>this is a popular battle</p> 
-</div>
-<div class = "trendingPost">
- <p>this is a trending post. this can be removed if not enough time.</p> 
-</div>
-<div class = "yourBattle">
- <p>this is you current battle</p> 
+<div class="navbar">
+    <button (click)="myClickFunction($event,'Home')">S3P</button>
+    <button (click)="myClickFunction($event,'Profile')">Profile</button>
+    <button (click)="myClickFunction($event,'Inbox')">Inbox</button>
+    <button (click)="myClickFunction($event,'Social')">Social</button>
+    <button (click)="myClickFunction($event,'Groups')">Groups</button>
+    <div class="dropdown">
+      <button class="dropbtn">Feeds 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <button (click)="myClickFunction($event,'TopPost')">Top Posts</button>
+          <button (click)="myClickFunction($event,'TopGroupPost')">Top Group Posts</button>
+          <button (click)="myClickFunction($event,'TopFollowing')">Top Following</button>
+          <button (click)="myClickFunction($event,'TopBattles')">Top Battles</button>
+      </div>
+    </div> 
+  
+  <button (click)="myClickFunction($event,'SignUp')"><span class="glyphicon glyphicon-user"></span> Sign Up</button>
+  <button (click)="myClickFunction($event,'LogIn')"><span class="glyphicon glyphicon-log-in"></span> Login</button>
 </div>
 
+<div *ngIf = "onclickLogIn">
+  <app-log-in></app-log-in>
+</div>
+<div *ngIf = "onclickSignUp">
+  Sign Up page
+</div>
+<div *ngIf = "onclickProfile">
+  Profile page
+</div>
+<div *ngIf = "onclickInbox">
+   Inbox
+</div>
+<div *ngIf = "onclickSocial">
+  Social page
+</div>
+<div *ngIf = "onclickGroups">
+  Group page
+</div>
+<div *ngIf = "onclickTopPost">
+  Top Posts
+</div>
+<div *ngIf = "onclickTopFollowing">
+  Top Following
+</div>
+<div *ngIf = "onclickTopGroupPost">
+  Top Group Psts
+</div>
+<div *ngIf = "onclickTopBattles">
+  Battles
+</div>
+<div *ngIf = "onclickHome">
+    HomePage
+</div>
