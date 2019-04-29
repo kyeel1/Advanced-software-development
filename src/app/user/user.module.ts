@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostsModule } from '../posts/posts.module';
 import { GroupsModule } from '../groups/groups.module';
-import {MessageModule} from '../message/message.module';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -20,10 +20,8 @@ export class UserModule {
     Following: UserModule[];
     posts: PostsModule[];
     groups: GroupsModule[];
-    messages: MessageModule[];
-    AddMessage(message: MessageModule){
-      this.messages.push(message);
-    }
+    //messages: messages[];
+    //AddMessage(){};
     AddPosts(post: PostsModule):void {//add posts to a users history
       this.posts.push(post);
      }
@@ -41,6 +39,12 @@ export class UserModule {
      }
      AddDescription(description: String):void {//adds a description in the profile page
       this.Description = description;
+     }
+     getUserName(){
+      return this.UserName;
+     }
+     getPassword(){
+      return this.Password;
      }
  }
  
