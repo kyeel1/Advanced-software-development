@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FeedTemplateComponent } from './feed-template/feed-template.component';
 import { TopPostsComponent } from './top-posts/top-posts.component';
@@ -12,6 +12,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { WarsComponent } from './wars/wars.component';
 import { BattlesComponent } from './battles/battles.component';
+import { MessagingComponent } from './messaging/messaging.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { BattlesComponent } from './battles/battles.component';
     ProfilePageComponent,
     LogInComponent,
     WarsComponent,
-    BattlesComponent
+    BattlesComponent,
+    MessagingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

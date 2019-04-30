@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostsModule } from '../posts/posts.module';
 import { GroupsModule } from '../groups/groups.module';
-
+import {MessageModule} from '../message/message.module';
 @NgModule({
   declarations: [],
   imports: [
@@ -20,8 +20,10 @@ export class UserModule {
     Following: UserModule[];
     posts: PostsModule[];
     groups: GroupsModule[];
-    //messages: messages[];
-    //AddMessage(){};
+    messages: MessageModule[];
+    AddMessage(message: MessageModule){
+      this.messages.push(message);
+    }
     AddPosts(post: PostsModule):void {//add posts to a users history
       this.posts.push(post);
      }
@@ -47,4 +49,6 @@ export class UserModule {
       return this.Password;
      }
  }
+
+ export let TestUser= new UserModule("Hank", "12345", "abcd");
  
