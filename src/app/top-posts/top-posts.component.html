@@ -1,3 +1,7 @@
-<p>
-  top-posts works!
-</p>
+<div class="Top Posts">
+
+  <app-post-card *ngFor="let p of TOPPOSTS"
+  [PostModule] = "p">
+  </app-post-card>
+
+</div>
