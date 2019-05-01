@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Database } from '../database/database.module';
+import { Database, addUser } from '../database/database.module';
 import { UserModule } from '../user/user.module';
 import { log } from 'util';
 
@@ -16,11 +16,8 @@ export class LogInComponent implements OnInit {
   Message : String;
   ngOnInit() {}
   LogIn(Username,Password): boolean{
-    Database.addUser("1","2","3");
-    for(var i;i <this.temp.length;i++){
-      console.log(Database.UserList[i].getUserName);
-    }
-    console.log(this.temp.length);
+    this.SignUp("user4","pass4","user4");
+    console.log(Database.UserList);
     for(var i;i <this.temp.length;i++){
         this.compare = this.temp.pop();
         if(this.compare.getUserName == Username && this.compare.getPassword == Password){
@@ -46,7 +43,7 @@ export class LogInComponent implements OnInit {
     }
   }
   SignUp(Username,Password,DisplayName){
-    Database.addUser(Username,Password,DisplayName);
+    addUser(Username,Password,DisplayName);
   }
 }
 export let CurrentUser=new UserModule("guest","guest","guest");
