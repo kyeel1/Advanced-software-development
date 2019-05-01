@@ -10,32 +10,26 @@ import { log } from 'util';
 })
 
 export class LogInComponent implements OnInit {
-  temp = Database.UserList;
   compare : UserModule;
   constructor() { }
   Message : String;
   ngOnInit() {}
-  LogIn(Username,Password): boolean{
-    this.SignUp("user4","pass4","user4");
-    console.log(Database.UserList);
-    for(var i;i <this.temp.length;i++){
-        this.compare = this.temp.pop();
-        if(this.compare.getUserName == Username && this.compare.getPassword == Password){
+  LogIn(Username : string,Password:string): boolean{
+    for(let i in Database.UserList){
+        this.compare = Database.UserList[i];
+        console.log(CurrentUser);
+        if(Username == this.compare.getUserName() && Password == this.compare.getPassword()){
             CurrentUser = this.compare;
+            console.log(CurrentUser);
             return true;
         }
-        else{
-          console.log(this.compare.getUserName);
-        }
+        
     }
     return false;
   }
-  LogOut():void{
-    CurrentUser = new UserModule("guest","guest","guest");
-  }
+  
   Submit(event,UN,PW){
     if (this.LogIn(UN,PW)){
-      this.LogIn(UN,PW);
       this.Message = "log in successful";
     }
     else{
@@ -45,5 +39,12 @@ export class LogInComponent implements OnInit {
   SignUp(Username,Password,DisplayName){
     addUser(Username,Password,DisplayName);
   }
+  
 }
 export let CurrentUser=new UserModule("guest","guest","guest");
+
+export function LogOut():void{
+  CurrentUser = new UserModule("guest","guest","guest");
+}
+
+

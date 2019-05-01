@@ -1,5 +1,3 @@
-<input type="text" name="UserName" value="enter a Username">
-<input type="text" name="Password" value="enter a Password">
-<button (click) = "Submit($event,UserName,Password)">submit</button>
-<p>{{Message}}</p>
-<p>{{currentUser}}</p>
+<input #UserName type="text"  value="enter a Username">
+<input #Password type="text"  value="enter a Password">
+<button (click) = "Submit($event,UserName.value,Password.value)">submit</button>
