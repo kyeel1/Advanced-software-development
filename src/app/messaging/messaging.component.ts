@@ -3,6 +3,7 @@ import { Database } from '../database/database.module';
 import { UserModule, TestUser } from '../user/user.module';
 import { MessageModule } from '../message/message.module';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { CurrentUser } from '../log-in/log-in.component';
 
 
 @Component({
@@ -13,27 +14,27 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 export class MessagingComponent implements OnInit {
 receiver:String;
 text:String;
-name=TestUser.UserName;
+name=CurrentUser.UserName;
+messageList=CurrentUser.messages;
 message;
-userList=Database.UserList;
+
   constructor() {
 
   }
 
   sendMessage(){
 
-    this.message=new MessageModule(this.receiver,name,this.text);
-    console.log(this.message.message);
+    this.message=new MessageModule(this.receiver, this.name,this.text);
     
-
-    for(var i = 0;i<this.userList.length;i++){
-      if(this.userList[i].UserName===this.receiver)
-      {
-        console.log("Good")
+    for(let i in Database.UserList){
+      if(Database.UserList[i].UserName==this.receiver){
+        Database.UserList[i].AddMessage(this.message)
+        console.log("Message Sent")
+        return
       }
     }
-
   }
+  
   ngOnInit() {
     
     

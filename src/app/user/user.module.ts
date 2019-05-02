@@ -20,7 +20,7 @@ export class UserModule {
     Following: UserModule[];
     posts: PostsModule[];
     groups: GroupsModule[];
-    messages: MessageModule[];
+    messages: MessageModule[]=[];
     AddMessage(message: MessageModule){
       this.messages.push(message);
     }

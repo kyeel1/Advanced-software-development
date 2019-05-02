@@ -6,8 +6,17 @@
 <p>
   Enter a message to send
 </p>
-<input [(ngModel)]="text">
+<textarea [(ngModel)]="text" rows="10" cols="50"></textarea>
+<br>
 <button (click)="sendMessage()">Send Message</button>
-{{Receiver}}
-{{text}}
-{{name}}
+<table>
+<th>From</th>
+<th>Message</th>
+
+  <tr *ngFor="let mes of messageList">
+ 
+   <td>From: {{mes.sender}}</td>
+   <td>{{mes.message}}</td>
+
+  </tr>
+</table>

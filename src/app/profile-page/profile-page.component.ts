@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentUser } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -12,5 +13,6 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  posts=CurrentUser.posts;
 }
 
