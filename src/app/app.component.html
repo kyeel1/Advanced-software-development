@@ -22,10 +22,10 @@
   <app-log-in></app-log-in>
 </div>
 <div *ngIf = "onclickProfile">
-  Profile page
+  <app-profile-page></app-profile-page>
 </div>
 <div *ngIf = "onclickInbox">
-   Inbox
+   <app-messaging></app-messaging>
 </div>
 <div *ngIf = "onclickSocial">
   <app-social></app-social>
@@ -34,17 +34,20 @@
   <app-group></app-group>
 </div>
 <div *ngIf = "onclickTopPost">
-  Top Posts
+  <app-top-posts></app-top-posts>
 </div>
 <div *ngIf = "onclickTopFollowing">
-  Top Following
+  <app-top-followers-posts></app-top-followers-posts>
 </div>
 <div *ngIf = "onclickTopGroupPost">
-  Top Group Psts
+  <app-top-group-posts></app-top-group-posts>
 </div>
 <div *ngIf = "onclickTopBattles">
   Battles
 </div>
 <div *ngIf = "onclickHome">
     HomePage
+</div>
+<div *ngIf = "onclickBattles">
+  <app-wars></app-wars>
 </div>
