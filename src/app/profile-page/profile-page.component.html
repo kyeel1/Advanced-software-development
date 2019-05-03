@@ -1,3 +1,16 @@
-<p>
-  profile-page works!
-</p>
+<br>
+<img style="border:5px solid black;" src="{{imageAddress}}"  width="75" height="75" >
+{{screenName}}
+<br>
+{{description}}
+<button (click)="toggleEdit()">Edit Profile</button>
+<div *ngIf=display>
+    <p>Enter an image address to change your icon></p>
+    <br>
+    <input [(ngModel)]="imageAddress">
+    <p>Enter a new description</p>
+    <br>
+    <input [(ngModel)]="description">
+    <br>
+    <button (click)="saveChanges()">Submit Changes</button>
+</div>
