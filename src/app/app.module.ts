@@ -12,6 +12,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { WarsComponent } from './wars/wars.component';
 import { BattlesComponent } from './battles/battles.component';
+import { SocialComponent } from './social/social.component';
+import { GroupComponent } from './group/group.component';
 import { MessagingComponent } from './messaging/messaging.component';
 import { from } from 'rxjs';
 
@@ -28,11 +30,13 @@ import { from } from 'rxjs';
     LogInComponent,
     WarsComponent,
     BattlesComponent,
-    MessagingComponent
+    SocialComponent,
+    GroupComponent,
+    MessagingComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

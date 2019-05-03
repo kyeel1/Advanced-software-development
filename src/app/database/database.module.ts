@@ -57,9 +57,10 @@ export function createGroup(creator: UserModule, name: string){//when you call t
   Database.GroupList.push(temp);
   creator.AddGroup(temp);
  }
- export function addUser(UserName: string,Password : string, DisplayName : string){//use this to create new users through the log in page
+ export function addUser(UserName: string,Password : string, DisplayName : string):boolean{//use this to create new users through the log in page
   let newUser = new UserModule(UserName,Password,DisplayName);
   Database.UserList.push(newUser);
+  return true;
  }
  export function addPost(Poster: UserModule,Description : String){//use this to create new posts this also adds the post to the users list of posts
   let temp = new PostsModule(Poster,Description);

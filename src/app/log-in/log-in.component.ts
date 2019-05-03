@@ -17,7 +17,6 @@ export class LogInComponent implements OnInit {
   LogIn(Username : string,Password:string): boolean{
     for(let i in Database.UserList){
         this.compare = Database.UserList[i];
-        console.log(CurrentUser);
         if(Username == this.compare.getUserName() && Password == this.compare.getPassword()){
             CurrentUser = this.compare;
             console.log(CurrentUser);
@@ -36,8 +35,15 @@ export class LogInComponent implements OnInit {
       this.Message = "log in failed wrong username and password";
     }
   }
-  SignUp(Username,Password,DisplayName){
-    addUser(Username,Password,DisplayName);
+  SignUp(UserName,PassWord,ConfirmPassword,DisplayName){
+    if(PassWord == ConfirmPassword){
+    addUser(UserName,PassWord,DisplayName);
+    this.LogIn(UserName,PassWord)
+    this.Message = " succesfully created account"
+    }
+    else{
+      this.Message = " please make sure your passwords match"
+    }
   }
   
 }
@@ -45,6 +51,7 @@ export let CurrentUser=new UserModule("guest","guest","guest");
 
 export function LogOut():void{
   CurrentUser = new UserModule("guest","guest","guest");
+  this.Message = "succesfully logged out"
 }
 
 

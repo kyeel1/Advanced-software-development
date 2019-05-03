@@ -15,28 +15,23 @@
           <button (click)="myClickFunction($event,'TopBattles')">Top Battles</button>
       </div>
     </div> 
-  
-  <button (click)="myClickFunction($event,'SignUp')"><span class="glyphicon glyphicon-user"></span> Sign Up</button>
-  <button (click)="myClickFunction($event,'LogIn')"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+  <button (click)="myClickFunction($event,'LogIn')"><span class="glyphicon glyphicon-log-in"></span> Login/SignUp</button>
 </div>
 
 <div *ngIf = "onclickLogIn">
   <app-log-in></app-log-in>
 </div>
-<div *ngIf = "onclickSignUp">
-  Sign Up page
-</div>
 <div *ngIf = "onclickProfile">
-  <app-profile-page></app-profile-page>
+  Profile page
 </div>
 <div *ngIf = "onclickInbox">
-   <app-messaging></app-messaging>
+   Inbox
 </div>
 <div *ngIf = "onclickSocial">
-  Social page
+  <app-social></app-social>
 </div>
 <div *ngIf = "onclickGroups">
-  Group page
+  <app-group></app-group>
 </div>
 <div *ngIf = "onclickTopPost">
   Top Posts
