@@ -13,8 +13,8 @@ export class TopGroupPostsComponent implements OnInit {
 
   ALLPOSTS: PostsModule[] = Database.PostList
   GROUPS: GroupsModule[] = Database.GroupList
-  CURRENTUSERGROUPS: GroupsModule[]
-  ALLGROUPPOSTS: PostsModule[]
+  CURRENTUSERGROUPS: GroupsModule[] = new Array;
+  ALLGROUPPOSTS: PostsModule[] = new Array;
 
   constructor() { }
  // i < this.GROUPS[c].UserList

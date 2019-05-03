@@ -29,6 +29,8 @@ onclickTopPost = false;
 onclickTopGroupPost = false;
 onclickTopBattles = false;
 onclickTopFollowing = false;
+onclickBattles = false;
+onclickYourPosts = false;
 myClickFunction(event,name : String) {
 this.onclickHome = false;
 this.onclickLogIn = false;
@@ -84,6 +86,15 @@ this.onclickTopFollowing = false;
     }
     case "Home":{
       this.onclickHome = true;
+      break;
+    }
+    case "Battles":{
+      this.onclickBattles = true;
+      break;
+    }
+    case "YourPosts":{
+      this.onclickYourPosts = true;
+      break;
     }
   }
 }

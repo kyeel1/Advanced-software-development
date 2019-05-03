@@ -18,7 +18,6 @@ name=CurrentUser.UserName;
 messageList=CurrentUser.messages;
 message;
 
-
   constructor() {
 
   }
@@ -31,12 +30,10 @@ message;
       if(Database.UserList[i].UserName==this.receiver){
         Database.UserList[i].AddMessage(this.message)
         console.log("Message Sent")
-        
         return
       }
     }
   }
-
   
   ngOnInit() {
     

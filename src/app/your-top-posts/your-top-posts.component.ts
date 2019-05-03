@@ -11,7 +11,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 })
 export class YourTopPostsComponent implements OnInit {
   ALLPOSTS: PostsModule[] = Database.PostList
-  YOURSORTEDPOSTS: PostsModule[]
+  YOURSORTEDPOSTS: PostsModule[] = new Array;
 
   constructor() { }
  // i < this.GROUPS[c].UserList

@@ -67,3 +67,4 @@ export function createGroup(creator: UserModule, name: string){//when you call t
   Database.PostList.push(temp);
   Poster.AddPosts(temp);
  }
+ user1.AddFollower(user2);

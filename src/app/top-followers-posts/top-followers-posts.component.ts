@@ -12,7 +12,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 export class TopFollowersPostsComponent implements OnInit {
 
   ALLPOSTS: PostsModule[] = Database.PostList
-  ALLFOLLOWERSPOSTS: PostsModule[]
+  ALLFOLLOWERSPOSTS: PostsModule[] = new Array;
 
   constructor() { }
  // i < this.GROUPS[c].UserList

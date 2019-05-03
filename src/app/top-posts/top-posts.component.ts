@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsModule } from '../posts/posts.module';
 import {DatabaseModule, Database} from '../database/database.module';
 import { getTNode } from '@angular/core/src/render3/util';
+import { UserModule } from '../user/user.module';
 
 @Component({
   selector: 'app-top-posts',
@@ -9,8 +10,11 @@ import { getTNode } from '@angular/core/src/render3/util';
   styleUrls: ['./top-posts.component.css']
 })
 export class TopPostsComponent implements OnInit {
+  user1 = new UserModule("user1","pass1","user1");
+  post1 = new PostsModule(this.user1,"hello world");
+  TOPPOSTS: PostsModule[] = new Array;
+  
 
-  TOPPOSTS: PostsModule[] = Database.postList;
 
   constructor() { }
 
