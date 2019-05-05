@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUser } from '../log-in/log-in.component';
-import { ClickedUser } from '../database/database.module';
+import { ClickedUser, Database } from '../database/database.module';
 import { UserModule } from '../user/user.module';
 
 
@@ -17,6 +17,7 @@ export class ProfilePageComponent implements OnInit {
   description=ClickedUser.Description;
   display=false;
   compare=ClickedUser.Password==CurrentUser.Password;
+  otherCompare=ClickedUser.Password!=CurrentUser.Password
   constructor() { }
 
   toggleEdit(){
@@ -33,6 +34,9 @@ export class ProfilePageComponent implements OnInit {
    CurrentUser.Description=this.description;
    CurrentUser.Picture=this.imageAddress;
     this.display=false;
+  }
+  Follow(){
+    
   }
   ngOnInit() {
     

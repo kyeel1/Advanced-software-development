@@ -1,6 +1,9 @@
 <br>
 <img style="border:5px solid black;" src="{{imageAddress}}"  width="75" height="75" >
 {{screenName}}
+<div *ngIf=otherCompare>
+    <button (Click)="Follow()">Follow</button>
+</div>
 <br>
 {{description}}
 <div *ngIf=compare>
