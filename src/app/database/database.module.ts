@@ -78,7 +78,8 @@ export function createGroup(creator: UserModule, name: string){//when you call t
  export let ClickedUser:UserModule;
  export function changeClickedUser(user: UserModule){
    ClickedUser=user;
- } user1.AddFollower(user2);
+ } 
+ user1.AddFollower(user2);
  post1.AddUpVote();
  post2.AddUpVote();
  post2.AddUpVote();

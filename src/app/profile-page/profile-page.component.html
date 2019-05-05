@@ -2,7 +2,7 @@
 <img style="border:5px solid black;" src="{{imageAddress}}"  width="75" height="75" >
 {{screenName}}
 <div *ngIf=otherCompare>
-    <button (Click)="Follow()">Follow</button>
+    <button (Click)="AddFollower(CurrentUser,ClickedUser)">Follow</button>
 </div>
 <br>
 {{description}}
