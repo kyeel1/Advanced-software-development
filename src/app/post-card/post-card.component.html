@@ -6,11 +6,14 @@
 
   <div class="post-upvotes">
       {{post.UpVotes}}
+      <button (click) = "UpVote()">Up vote</button>
   </div>
-  <button (click) = "UpVote()">Up vote</button>
+  
   <div>
     {{post.DownVotes}}
+    <button (click) = "DownVote()">down vote</button>
   </div>
-  <button (click) = "DownVote()">down vote</button>
-
+  <div>
+  {{post.TotalVote}}
+</div>
 </div>
