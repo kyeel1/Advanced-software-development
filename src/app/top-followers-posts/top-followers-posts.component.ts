@@ -11,7 +11,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 })
 export class TopFollowersPostsComponent implements OnInit {
 
-  ALLPOSTS: PostsModule[] = Database.PostList;
+  ALLPOSTS: PostsModule[] = Database.PostList
   ALLFOLLOWERSPOSTS: PostsModule[] = new Array;
 
   constructor() { }
@@ -20,11 +20,13 @@ export class TopFollowersPostsComponent implements OnInit {
   findAllFollowers(){
     for (let c = 0; c < this.ALLPOSTS.length; c++) 
     {
-      for (let b = 0; b < CurrentUser.Followers.length; b++)
+      console.log(CurrentUser.Following)
+      for (let b = 0; b < CurrentUser.Following.length; b++)
       {
-        if (this.ALLPOSTS[c].Poster == CurrentUser.Followers[b] )
+        if (this.ALLPOSTS[c].Poster == CurrentUser.Following[b] )
         {
           this.ALLFOLLOWERSPOSTS.push(this.ALLPOSTS[c])
+          console.log(this.ALLFOLLOWERSPOSTS.length)
         }
       }
     }
@@ -42,8 +44,8 @@ export class TopFollowersPostsComponent implements OnInit {
     let upvotesB = b.TotalVote;
 
     const comparison = 0;
-    if (upvotesA > upvotesB) { return 1; }
-    if (upvotesB > upvotesA) { return -1; }
+    if (upvotesA > upvotesB) { return -1; }
+    if (upvotesB > upvotesA) { return 1; }
     return 0;
 
   }
@@ -51,6 +53,7 @@ export class TopFollowersPostsComponent implements OnInit {
   ngOnInit() 
   {
     this.findAllFollowers()
+    console.log(this.ALLFOLLOWERSPOSTS.length)
     this.sortPosts(this.ALLFOLLOWERSPOSTS)
   }
 
