@@ -1,3 +1,4 @@
+<div id="Tab">
 <p>
   Enter a User to send a message to
 </p>
@@ -11,6 +12,7 @@
 <button (click)="sendMessage()">Send Message</button>
 <br>
 <p>{{messageStatus}}</p>
+<div style="overflow-x:auto;">
 <table>
 <th>From</th>
 <th>Message</th>
@@ -18,8 +20,11 @@
   <tr *ngFor="let mes of messageList">
  
    <td>From: {{mes.sender}}</td>
+   <td>{{mes.message}}</td>
    <td><button (click)="deleteMessage(mes)">Delete Message</button></td>
    
 
   </tr>
 </table>
+</div>
+</div>
