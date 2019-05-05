@@ -12,7 +12,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 export class TopGroupPostsComponent implements OnInit {
 
   ALLPOSTS: PostsModule[] = Database.PostList
-  GROUPS: GroupsModule[] = Database.GroupList
+  ALLGROUPS: GroupsModule[] = Database.GroupList
   CURRENTUSERGROUPS: GroupsModule[] = new Array;
   ALLGROUPPOSTS: PostsModule[] = new Array;
 
@@ -20,15 +20,29 @@ export class TopGroupPostsComponent implements OnInit {
  // i < this.GROUPS[c].UserList
 
   findAllGroups(){
-    for (let c = 0; c < this.GROUPS.length; c++) {
+    for (let c = 0; c < this.ALLGROUPS.length; c++) {
+      console.log("loop")
+      console.log(this.ALLGROUPS[c]);
+      console.log(this.ALLGROUPS.length)
+      console.log(CurrentUser.groups[0])
       for (let d = 0; d < CurrentUser.groups.length; d++) {
-      if (this.GROUPS[c] = CurrentUser.groups[d])
+        console.log("loop2")
+      if (this.ALLGROUPS[c] = CurrentUser.groups[d])
       {
-        this.CURRENTUSERGROUPS.push(this.GROUPS[c])
+        
+        this.CURRENTUSERGROUPS.push(this.ALLGROUPS[c])
       }
       }
     }
   }
+
+ // findAllGroups2(){
+ //   for (let c = 0; c < this.ALLGROUPS.length; c++) {
+ //     console.log("loop")
+ //     console.log(CurrentUser.groups.length)
+ //     if(CurrentUser.)
+ //   }
+ // }
 
 
   sortTopGroupPosts() {

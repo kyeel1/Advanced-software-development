@@ -19,9 +19,26 @@ export class YourTopPostsComponent implements OnInit {
   findAllYourPosts(){
     for (let c = 0; c < this.ALLPOSTS.length; c++) 
     {
+      console.log(CurrentUser.posts.length)
+      console.log(CurrentUser.UserName)
+
         if (this.ALLPOSTS[c].Poster == CurrentUser )
         {
           this.YOURSORTEDPOSTS.push(this.ALLPOSTS[c])
+          console.log("pushed")
+          //console.log(this.YOURSORTEDPOSTS.length)
+        }
+    }
+  }
+
+  findAllYourPostsTest()
+  {
+    for (let c = 0; c < this.ALLPOSTS.length; c++) 
+    {
+    if (this.ALLPOSTS[c].Poster != CurrentUser )
+        {
+          this.ALLPOSTS.splice(c,1)
+          //console.log(this.YOURSORTEDPOSTS.length)
         }
     }
   }
@@ -38,16 +55,17 @@ export class YourTopPostsComponent implements OnInit {
     let upvotesB = b.TotalVote;
 
     const comparison = 0;
-    if (upvotesA > upvotesB) { return 1; }
-    if (upvotesB > upvotesA) { return -1; }
+    if (upvotesA > upvotesB) { return -1; }
+    if (upvotesB > upvotesA) { return 1; }
     return 0;
 
   }
 
   ngOnInit() 
   {
-    this.findAllYourPosts()
+    this.findAllYourPostsTest()
     this.sortPosts(this.YOURSORTEDPOSTS)
+    console.log(this.YOURSORTEDPOSTS.length)
   }
 
 }
