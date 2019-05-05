@@ -20,6 +20,7 @@ export class PostsModule {
 
   UpdateTotal(){
     this.TotalVote = this.UpVotes - this.DownVotes;
+    this.Poster.AddPoints(this.TotalVote);
   }
   AddUpVote():void{
     this.UpVotes += 1;

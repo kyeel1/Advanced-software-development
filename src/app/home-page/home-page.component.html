@@ -1,17 +1,12 @@
 <h1>Welcome to Step 3 Profit</h1>
 <div>
-
+    <app-post-card [post] = "TopPost"></app-post-card>
 </div>
 <div>
-  
+    <app-group></app-group>
 </div>
-<div>
-  
-</div>
-<div>
-  
-</div>
-
-<div>
-  
+<div >
+    <app-post-card *ngFor="let p of AllPosts"
+    [post] = "p">
+    </app-post-card>
 </div>

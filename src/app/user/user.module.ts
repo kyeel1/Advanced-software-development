@@ -21,11 +21,16 @@ export class UserModule {
     posts: PostsModule[]= new Array;
     groups: GroupsModule[]= new Array;
     messages: MessageModule[]=new Array;
+    Points: number = 0;
+    AddPoints(N){
+      this.Points += N;
+    }
     AddMessage(message: MessageModule){
       this.messages.push(message);
     }
     AddPosts(post: PostsModule):void {//add posts to a users history
       this.posts.push(post);
+      this.Points++;
      }
      AddGroup(group: GroupsModule):void {//keeps track of all the groups a user is in
       this.groups.push(group);

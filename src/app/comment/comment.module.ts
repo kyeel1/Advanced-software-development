@@ -9,15 +9,16 @@ import { UserModule } from '../user/user.module';
   ]
 })
 export class CommentModule { constructor(P,C){this.Poster = P,this.Content = C,this.UpVotes = 0, this.DownVotes = 0, this.TotalVote = 0}
-Poster:String;
+Poster:UserModule;
 Content:String;
 UpVotes:number;
 DownVotes:number;
 TotalVote:number;
-WhoVoted: UserModule[];
+WhoVoted: UserModule[] = new Array;
 
 UpdateTotal(){
   this.TotalVote = this.UpVotes - this.DownVotes;
+  this.Poster.AddPoints(this.TotalVote);
   }
   AddUpVote():void{
   this.UpVotes += 1;

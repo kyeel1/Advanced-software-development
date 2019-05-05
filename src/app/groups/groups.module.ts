@@ -17,7 +17,17 @@ export class GroupsModule {
   Picture : string ="";
   Description: string="";
   RuleList: string[] = new Array;
+  Points: number = 0;
   //WarList : War[];
+  getPoints(){
+    this.TotalPoints();
+    return this.Points;
+  }
+  TotalPoints():void{
+    for(var i = 0;i<this.UserList.length;i++){
+      this.Points +=this.UserList[i].Points;
+    }
+  }
   AddUser(user: UserModule):void {//adds a person to the group
     this.UserList.push(user);
   }
