@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ClickedUser, Database, changeClickedUser } from './database/database.module';
 import { CurrentUser } from './log-in/log-in.component';
+import { LogOut, CurrentUser } from './log-in/log-in.component';
+import { UserModule } from './user/user.module';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,7 @@ export class AppComponent {
   this.log.push(this.tracker);
   
 }
+message:string = "";
 onclickHome = true;
 onclickLogIn = false;
 onclickSignUp = false;
@@ -33,6 +36,8 @@ onclickTopBattles = false;
 onclickTopFollowing = false;
 onclickBattles = false;
 onclickYourPosts = false;
+onclickCreatePost = false;
+onclickLogOut = false;
 myClickFunction(event,name : String) {
 this.onclickHome = false;
 this.onclickLogIn = false;
@@ -45,6 +50,9 @@ this.onclickTopPost = false;
 this.onclickTopGroupPost = false;
 this.onclickTopBattles = false;
 this.onclickTopFollowing = false; 
+this.onclickYourPosts = false;
+this.onclickCreatePost = false;
+this.onclickLogOut = false;
   switch(name){
     case "LogIn" :{
       this.onclickLogIn = true;
@@ -99,9 +107,19 @@ this.onclickTopFollowing = false;
       this.onclickYourPosts = true;
       break;
     }
+    case "LogOut":{
+      LogOut();
+      this.onclickLogOut = true;
+      this.message = "logged out sucessfully";
+      this.onclickHome = true;
+      break;
+    }
+    case "CreatePost":{
+      this.onclickCreatePost = true;
+      break;
+    }
   }
 }
 
 }
-
 

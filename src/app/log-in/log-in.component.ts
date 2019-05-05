@@ -48,10 +48,11 @@ export class LogInComponent implements OnInit {
   
 }
 export let CurrentUser=new UserModule("guest","guest","guest");
-
 export function LogOut():void{
   CurrentUser = new UserModule("guest","guest","guest");
-  this.Message = "succesfully logged out"
 }
+
+
+
 
 

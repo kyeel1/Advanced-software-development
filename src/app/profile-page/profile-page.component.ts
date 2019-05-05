@@ -43,5 +43,6 @@ export class ProfilePageComponent implements OnInit {
   }
 
   
+  posts=CurrentUser.posts;
 }
 

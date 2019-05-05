@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupsModule } from '../groups/groups.module';
 import { UserModule } from '../user/user.module';
+import { Database, AddToGroup } from '../database/database.module';
+import { CurrentUser } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-group',
@@ -14,8 +16,13 @@ export class GroupComponent implements OnInit {
 
   ngOnInit() {
   }
+  JoinGroup(){
+    AddToGroup(CurrentUser,CurrentGroup);
+  }
 }
 export function SetCurrentGroup(g: GroupsModule):void{
 CurrentGroup = g;
 }
-let CurrentGroup :GroupsModule;
+let CurrentGroup :GroupsModule = Database.GroupList[0];
+let CurrentItem = CurrentGroup.UserList;
+console.log(CurrentItem);

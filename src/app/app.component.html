@@ -4,6 +4,7 @@
     <button (click)="myClickFunction($event,'Inbox')">Inbox</button>
     <button (click)="myClickFunction($event,'Social')">Social</button>
     <button (click)="myClickFunction($event,'Groups')">Groups</button>
+    <button (click)="myClickFunction($event,'CreatePost')">Create Post</button>
     <div class="dropdown">
       <button class="dropbtn">Feeds 
         <i class="fa fa-caret-down"></i>
@@ -16,9 +17,12 @@
           <button (click)="myClickFunction($event,'YourPosts')">Your Top Posts</button>
       </div>
     </div> 
-  <button (click)="myClickFunction($event,'LogIn')"><span class="glyphicon glyphicon-log-in"></span> Login/SignUp</button>
+  <button (click)="myClickFunction($event,'LogIn')"> Login/SignUp</button>
+  <button (click)="myClickFunction($event,'LogOut')"> LogOut</button>
 </div>
-
+<div *ngIf = "onclickLogOut">
+    {{message}}
+  </div>
 <div *ngIf = "onclickLogIn">
   <app-log-in></app-log-in>
 </div>
@@ -54,4 +58,7 @@
 </div>
 <div *ngIf = "onclickYourPosts">
   <app-your-top-posts></app-your-top-posts>
+</div>
+<div *ngIf = "onclickCreatePost">
+  create post link
 </div>

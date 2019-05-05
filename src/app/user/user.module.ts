@@ -11,16 +11,16 @@ import {MessageModule} from '../message/message.module';
 })
 export class UserModule {
     constructor(UN,P,DN){this.UserName = UN,this.Password = P,this.DisplayName = DN}
-    UserName: string;
-    Password: string;
-    DisplayName: string;
-    Description: String;
-    Picture: String;//stores the link to the picture
-    Followers: UserModule[]=[];
-    Following: UserModule[]=[];
-    posts: PostsModule[]=[];
-    groups: GroupsModule[]=[];
-    messages: MessageModule[]=[];
+    UserName: string = "";
+    Password: string = "";
+    DisplayName: string ="";
+    Description: String ="";
+    Picture: String ="";//stores the link to the picture
+    Followers: UserModule[] = new Array;
+    Following: UserModule[]= new Array;
+    posts: PostsModule[]= new Array;
+    groups: GroupsModule[]= new Array;
+    messages: MessageModule[]=new Array;
     AddMessage(message: MessageModule){
       this.messages.push(message);
     }

@@ -13,6 +13,7 @@ export class TopGroupPostsComponent implements OnInit {
 
   ALLPOSTS: PostsModule[] = Database.PostList
   ALLGROUPS: GroupsModule[] = Database.GroupList
+  GROUPS: GroupsModule[] = Database.GroupList
   CURRENTUSERGROUPS: GroupsModule[] = new Array;
   ALLGROUPPOSTS: PostsModule[] = new Array;
 

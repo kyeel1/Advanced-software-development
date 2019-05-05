@@ -11,7 +11,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 })
 export class TopFollowersPostsComponent implements OnInit {
 
-  ALLPOSTS: PostsModule[] = Database.PostList
+  ALLPOSTS: PostsModule[] = Database.PostList;
   ALLFOLLOWERSPOSTS: PostsModule[] = new Array;
 
   constructor() { }

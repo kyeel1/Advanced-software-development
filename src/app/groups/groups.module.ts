@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserModule } from '../user/user.module';
+import { RulelistModule } from '../rulelist/rulelist.module';
 
 @NgModule({
   declarations: [],
@@ -10,12 +11,12 @@ import { UserModule } from '../user/user.module';
 })
 export class GroupsModule {
   constructor(name){this.GroupName = name}
-  UserList : UserModule[];
-  AdminList : UserModule[];
+  UserList : UserModule[] = new Array;
+  AdminList : UserModule[]= new Array;
   GroupName : string;
-  Picture : string;
-  Description: string;
-  RuleList: string;
+  Picture : string ="";
+  Description: string="";
+  RuleList: string[] = new Array;
   //WarList : War[];
   AddUser(user: UserModule):void {//adds a person to the group
     this.UserList.push(user);
@@ -29,10 +30,10 @@ export class GroupsModule {
   AddDescription(D: string):void{
     this.Description = D;
   }
-  AddRuleList(R: string):void{
-    this.RuleList = R;
+  AddRule(R: string):void{
+    this.RuleList.push(R);
   }
-  GetRuleList():string{
+  GetRuleList():string[]{
     return this.RuleList;
   }
   GetDescription():string{

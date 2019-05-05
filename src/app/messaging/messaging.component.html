@@ -18,7 +18,6 @@
   <tr *ngFor="let mes of messageList">
  
    <td>From: {{mes.sender}}</td>
-   <td >{{mes.message}}</td>
    <td><button (click)="deleteMessage(mes)">Delete Message</button></td>
    
 
