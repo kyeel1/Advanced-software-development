@@ -69,6 +69,7 @@ export function createGroup(creator: UserModule, name: string){//when you call t
   
  }
  user1.AddFollower(user2); export let ClickedUser:UserModule;
+ export let ClickedUser:UserModule;
  export function changeClickedUser(user: UserModule){
    ClickedUser=user;
  }
