@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserModule } from '../user/user.module';
 import { CommentModule } from '../comment/comment.module';
+import { CurrentUser } from '../log-in/log-in.component';
 @NgModule({
   declarations: [],
   imports: [
@@ -20,23 +21,32 @@ export class PostsModule {
 
   UpdateTotal(){
     this.TotalVote = this.UpVotes - this.DownVotes;
-    this.Poster.AddPoints(this.TotalVote);
+    
   }
   AddUpVote():void{
     this.UpVotes += 1;
     this.UpdateTotal();
+    this.Poster.AddPoints(1);
   }
   AddDownVote():void{
     this.DownVotes += 1;
     this.UpdateTotal();
+    this.Poster.AddPoints(-1);
   }   
-  keepTrack(voter : UserModule,upDown : String){//whenever someone votes on a post it will call this method and include who voted and which way they votes
-    this.WhoVoted.push(voter);
+  keepTrack(voter : UserModule,upDown : String):boolean{//whenever someone votes on a post it will call this method and include who voted and which way they votes
+    for(var i;i = this.WhoVoted.length;i++){
+      if(voter == this.WhoVoted[i])
+        return false;
+    }
     if(upDown == "up"){
       this.AddUpVote();
+      this.WhoVoted.push(voter);
+      return true;
     }
     else{
       this.AddDownVote();
+      this.WhoVoted.push(voter);
+      return true;
     }
   }
   User: UserModule;//temp user replace later with the current logged in user
