@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ClickedUser, Database, changeClickedUser } from './database/database.module';
-import { CurrentUser } from './log-in/log-in.component';
 import { LogOut, CurrentUser } from './log-in/log-in.component';
 import { UserModule } from './user/user.module';
 

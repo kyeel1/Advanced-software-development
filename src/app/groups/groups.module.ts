@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserModule } from '../user/user.module';
-import { RulelistModule } from '../rulelist/rulelist.module';
+
 
 @NgModule({
   declarations: [],
