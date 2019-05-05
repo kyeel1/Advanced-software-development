@@ -13,7 +13,8 @@ import { CurrentUser } from '../log-in/log-in.component';
 export class GroupComponent implements OnInit {
 
   constructor() {}
-  CurrentItem = CurrentGroup.UserList;
+  GroupList = CurrentGroup.UserList;
+  CurrentRule = CurrentGroup.GetRuleList();
   ngOnInit() {
   }
   JoinGroup(){

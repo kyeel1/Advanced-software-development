@@ -1,8 +1,12 @@
 <img src = {{Picture}}>
 <div>{{CurrentGroup}}</div>
-<div *ngFor="let p of CurrentItem">
+<div *ngFor="let p of CurrentRule">
+    {{p}}
+</div>
+<div *ngFor="let p of GroupList">
     {{p.UserName}}
 </div>
+
 <div>
 this displays wars
 </div>
