@@ -13,7 +13,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 export class GroupComponent implements OnInit {
 
   constructor() {}
-
+  CurrentItem = CurrentGroup.UserList;
   ngOnInit() {
   }
   JoinGroup(){
@@ -24,5 +24,3 @@ export function SetCurrentGroup(g: GroupsModule):void{
 CurrentGroup = g;
 }
 let CurrentGroup :GroupsModule = Database.GroupList[0];
-let CurrentItem = CurrentGroup.UserList;
-console.log(CurrentItem);
