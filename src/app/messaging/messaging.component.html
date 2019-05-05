@@ -1,0 +1,22 @@
+<p>
+  Enter a User to send a message to
+</p>
+<input [(ngModel)]="receiver">
+
+<p>
+  Enter a message to send
+</p>
+<textarea [(ngModel)]="text" rows="10" cols="50"></textarea>
+<br>
+<button (click)="sendMessage()">Send Message</button>
+<table>
+<th>From</th>
+<th>Message</th>
+
+  <tr *ngFor="let mes of messageList">
+ 
+   <td>From: {{mes.sender}}</td>
+   <td>{{mes.message}}</td>
+
+  </tr>
+</table>

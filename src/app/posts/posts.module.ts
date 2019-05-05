@@ -11,12 +11,12 @@ import { CommentModule } from '../comment/comment.module';
 export class PostsModule { 
   constructor(P,C){this.Poster = P;this.Content = C,this.UpVotes = 0,this.DownVotes = 0}
   Poster: UserModule;
-  Content:string;
+  Content:string ="";
   Comments:CommentModule[];
-  UpVotes:number;
-  DownVotes:number;
-  TotalVote:number;
-  WhoVoted: UserModule[];
+  UpVotes:number = 0;
+  DownVotes:number = 0;
+  TotalVote:number = 0;
+  WhoVoted: UserModule[] = new Array;
 
   UpdateTotal(){
     this.TotalVote = this.UpVotes - this.DownVotes;

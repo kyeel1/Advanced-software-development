@@ -1,0 +1,13 @@
+<img src = {{Picture}}>
+<div>{{CurrentGroup}}</div>
+<div>
+    <ul>
+        <li *ngFor="let p of CurrentItem">
+        {{p.UserName}}
+        </li>
+    </ul>
+</div>
+<div>
+this displays wars
+</div>
+<button (click) = "JoinGroup()">Join this group</button>

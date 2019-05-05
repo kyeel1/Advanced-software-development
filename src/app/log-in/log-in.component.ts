@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Database } from '../database/database.module';
+import { Database, addUser } from '../database/database.module';
 import { UserModule } from '../user/user.module';
 import { log } from 'util';
 
@@ -10,43 +10,49 @@ import { log } from 'util';
 })
 
 export class LogInComponent implements OnInit {
-  temp = Database.UserList;
   compare : UserModule;
   constructor() { }
   Message : String;
   ngOnInit() {}
-  LogIn(Username,Password): boolean{
-    Database.addUser("1","2","3");
-    for(var i;i <this.temp.length;i++){
-      console.log(Database.UserList[i].getUserName);
-    }
-    console.log(this.temp.length);
-    for(var i;i <this.temp.length;i++){
-        this.compare = this.temp.pop();
-        if(this.compare.getUserName == Username && this.compare.getPassword == Password){
+  LogIn(Username : string,Password:string): boolean{
+    for(let i in Database.UserList){
+        this.compare = Database.UserList[i];
+        if(Username == this.compare.getUserName() && Password == this.compare.getPassword()){
             CurrentUser = this.compare;
+            console.log(CurrentUser);
             return true;
         }
-        else{
-          console.log(this.compare.getUserName);
-        }
+        
     }
     return false;
   }
-  LogOut():void{
-    CurrentUser = new UserModule("guest","guest","guest");
-  }
+  
   Submit(event,UN,PW){
     if (this.LogIn(UN,PW)){
-      this.LogIn(UN,PW);
       this.Message = "log in successful";
     }
     else{
       this.Message = "log in failed wrong username and password";
     }
   }
-  SignUp(Username,Password,DisplayName){
-    Database.addUser(Username,Password,DisplayName);
+  SignUp(UserName,PassWord,ConfirmPassword,DisplayName){
+    if(PassWord == ConfirmPassword){
+    addUser(UserName,PassWord,DisplayName);
+    this.LogIn(UserName,PassWord)
+    this.Message = " succesfully created account"
+    }
+    else{
+      this.Message = " please make sure your passwords match"
+    }
   }
+  
 }
 export let CurrentUser=new UserModule("guest","guest","guest");
+export function LogOut():void{
+  CurrentUser = new UserModule("guest","guest","guest");
+}
+
+
+
+
+

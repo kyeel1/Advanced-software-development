@@ -1,3 +1,7 @@
-<p>
-  top-group-posts works!
-</p>
+<div class="Top Group Posts">
+
+  <app-post-card *ngFor="let p of ALLGROUPPOSTS"
+  [post] = "p">
+  </app-post-card>
+
+</div>

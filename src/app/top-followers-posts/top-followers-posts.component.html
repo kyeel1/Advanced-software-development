@@ -1,3 +1,7 @@
-<p>
-  top-followers-posts works!
-</p>
+<div class="Top Follower Posts">
+
+  <app-post-card *ngFor="let p of ALLFOLLOWERPOSTS"
+  [post] = "p">
+  </app-post-card>
+
+</div>

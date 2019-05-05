@@ -7,4 +7,10 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class MessageModule { }
+export class MessageModule {
+  receiver:String;
+  sender: String;
+  message:String;
+
+  constructor(Receiver,Sender,Message){this.receiver=Receiver, this.sender=Sender, this.message=Message}
+ }
