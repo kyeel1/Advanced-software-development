@@ -13,7 +13,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 export class PostCardComponent implements OnInit {
 
   @Input() post: PostsModule;
-
+  
   constructor() { }
 
   ngOnInit() {
