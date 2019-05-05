@@ -63,7 +63,7 @@ export class YourTopPostsComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.findAllYourPostsTest()
+    this.findAllYourPosts()
     this.sortPosts(this.YOURSORTEDPOSTS)
     console.log(this.YOURSORTEDPOSTS.length)
   }
