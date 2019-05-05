@@ -8,12 +8,16 @@
       {{post.UpVotes}}
       <button (click) = "UpVote()">Up vote</button>
   </div>
-  
+
   <div>
     {{post.DownVotes}}
     <button (click) = "DownVote()">down vote</button>
   </div>
+
   <div>
   {{post.TotalVote}}
 </div>
+    <img src="{{post.Poster.Picture}}" width="75" height="75">
+  </div>
+
 </div>
