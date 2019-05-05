@@ -1,26 +1,62 @@
-<br>
-<img style="border:5px solid black;" src="{{imageAddress}}"  width="75" height="75" >
-{{screenName}}
-<div *ngIf=otherCompare>
-    <button (Click)="AddFollower(CurrentUser,ClickedUser)">Follow</button>
-</div>
-<br>
-{{description}}
-<div *ngIf=compare>
+<div class="panel panel-primary">
 
-    <button (click)="toggleEdit()">Edit Profile</button>
-
-    <div *ngIf=display>
     
-        <p>Enter an image address to change your icon></p>
-        <br>
-        <input [(ngModel)]="imageAddress">
-        <p>Enter a new description</p>
-        <br>
-        <input [(ngModel)]="description">
-        <br>
-        <button (click)="saveChanges()">Submit Changes</button>
+
+
+    <div class="panel-heading">
+    <p>
+    
+        <img style="border:5px solid black;" src="{{imageAddress}}" width="75" height="75" >
+    
+        {{screenName}}
+
+    </p>
+    </div>
+
+
+    <div *ngIf=otherCompare>
+    
+        <button (Click)="AddFollower(CurrentUser,ClickedUser)" class="btn btn-primary">Follow</button>
+
+    </div>
+
+
+    <br>
+
+    <div class="panel-body">
+        <div id="description">
+            {{description}}
+        </div>
+    </div>
+
+    <div *ngIf=compare>
+
+    
+        <button (click)="toggleEdit()" class="btn btn-primary">Edit Profile</button>
+
+   
+        <div *ngIf=display>
+    
+        
+            <p>Enter an image address to change your icon</p>
+        
+            <br>
+        
+            <input [(ngModel)]="imageAddress">
+        
+            <p>Enter a new description</p>
+        
+            <br>
+        
+            <input [(ngModel)]="description">
+        
+            <br>
+        
+            <button (click)="saveChanges()" class="btn btn-primary">Submit Changes</button>
+            
+        </div>
 
     </div>
 
 </div>
+
