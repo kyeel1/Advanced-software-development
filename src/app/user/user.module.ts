@@ -16,11 +16,6 @@ export class UserModule {
     DisplayName: string;
     Description: String;
     Picture: String;//stores the link to the picture
-    Followers: UserModule[] = new Array;
-    Following: UserModule[]= new Array;
-    posts: PostsModule[]= new Array;
-    groups: GroupsModule[]= new Array;
-    messages: MessageModule[]=new Array;
     AddMessage(message: MessageModule){
       this.messages.push(message);
     }

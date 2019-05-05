@@ -66,5 +66,9 @@ export function createGroup(creator: UserModule, name: string){//when you call t
   let temp = new PostsModule(Poster,Description);
   Database.PostList.push(temp);
   Poster.AddPosts(temp);
+  
  }
- user1.AddFollower(user2);
+ user1.AddFollower(user2); export let ClickedUser:UserModule;
+ export function changeClickedUser(user: UserModule){
+   ClickedUser=user;
+ }

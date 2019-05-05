@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ClickedUser, Database, changeClickedUser } from './database/database.module';
+import { CurrentUser } from './log-in/log-in.component';
 
 @Component({
   selector: 'app-root',
@@ -54,6 +56,7 @@ this.onclickTopFollowing = false;
     }
     case 'Profile':{
       this.onclickProfile = true;
+      changeClickedUser(CurrentUser);
       break;
     }
     case "Inbox":{

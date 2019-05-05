@@ -9,6 +9,8 @@
 <textarea [(ngModel)]="text" rows="10" cols="50"></textarea>
 <br>
 <button (click)="sendMessage()">Send Message</button>
+<br>
+<p>{{messageStatus}}</p>
 <table>
 <th>From</th>
 <th>Message</th>
@@ -16,7 +18,9 @@
   <tr *ngFor="let mes of messageList">
  
    <td>From: {{mes.sender}}</td>
-   <td>{{mes.message}}</td>
+   <td >{{mes.message}}</td>
+   <td><button (click)="deleteMessage(mes)">Delete Message</button></td>
+   
 
   </tr>
 </table>

@@ -12,5 +12,10 @@ export class MessageModule {
   sender: String;
   message:String;
 
+
+  getMessage(){
+
+    return this.message;
+  }
   constructor(Receiver,Sender,Message){this.receiver=Receiver, this.sender=Sender, this.message=Message}
  }
