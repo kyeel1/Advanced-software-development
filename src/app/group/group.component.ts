@@ -26,4 +26,4 @@ export class GroupComponent implements OnInit {
 export function SetCurrentGroup(g: GroupsModule):void{
 CurrentGroup = g;
 }
-let CurrentGroup :GroupsModule;
+let CurrentGroup :GroupsModule = Database.GroupList[0];
