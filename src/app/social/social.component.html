@@ -1,12 +1,9 @@
 <input #Search type="text"  value="enter keyword">
-<button >people</button>
+<button (click) = "SearchUsers(Search.value)">people</button>
 <button >groups</button>
-<div>
-
+<div *ngIf = "ProfileFlag">
+<app-profile-page></app-profile-page>
 </div>
-<div>
-
-</div>
-<div>
-
+<div *ngIf = "GroupFlag">
+<app-group></app-group>
 </div>

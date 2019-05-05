@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Database, ClickedUser, changeClickedUser } from '../database/database.module';
+import { SetCurrentGroup } from '../group/group.component';
 
 @Component({
   selector: 'app-social',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social.component.css']
 })
 export class SocialComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
+  ProfileFlag = false;
+  GroupFlag = false;
+  SearchGroups(S:string){
+    for(var i = 0;i<Database.GroupList.length;i++){
+      if(Database.GroupList[i].GetName() == S){
+        SetCurrentGroup(Database.GroupList[i]);
+        this.GroupFlag = true;
+      }
+    }
+  }
+  SearchUsers(S:string){
+    for(var i = 0;i<Database.UserList.length;i++){
+      if(Database.UserList[i].DisplayName == S){
+        changeClickedUser(Database.UserList[i]);
+        this.ProfileFlag = true;
+      }
+    }
+  }
 }

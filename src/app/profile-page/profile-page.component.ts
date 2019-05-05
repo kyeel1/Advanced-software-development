@@ -10,8 +10,6 @@ import { UserModule } from '../user/user.module';
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit {
-
-  
   screenName=ClickedUser.DisplayName;
   imageAddress=ClickedUser.Picture;
   description=ClickedUser.Description;

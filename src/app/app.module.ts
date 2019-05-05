@@ -17,6 +17,7 @@ import { GroupComponent } from './group/group.component';
 import { MessagingComponent } from './messaging/messaging.component';
 import { from } from 'rxjs';
 import { PostCardComponent } from './post-card/post-card.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PostCardComponent } from './post-card/post-card.component';
     GroupComponent,
     MessagingComponent,
     PostCardComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

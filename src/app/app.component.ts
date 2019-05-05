@@ -38,87 +38,82 @@ onclickYourPosts = false;
 onclickCreatePost = false;
 onclickLogOut = false;
 myClickFunction(event,name : String) {
-this.onclickHome = false;
-this.onclickLogIn = false;
-this.onclickSignUp = false;
-this.onclickProfile = false;
-this.onclickInbox = false;
-this.onclickSocial =false;
-this.onclickGroups = false;
-this.onclickTopPost = false;
-this.onclickTopGroupPost = false;
-this.onclickTopBattles = false;
-this.onclickTopFollowing = false; 
-this.onclickYourPosts = false;
-this.onclickCreatePost = false;
-this.onclickLogOut = false;
+ this.onclickHome = false;
+ this.onclickLogIn = false;
+ this.onclickSignUp = false;
+ this.onclickProfile = false;
+ this.onclickInbox = false;
+ this.onclickSocial =false;
+ this.onclickGroups = false;
+ this.onclickTopPost = false;
+ this.onclickTopGroupPost = false;
+ this.onclickTopBattles = false;
+ this.onclickTopFollowing = false; 
+ this.onclickYourPosts = false;
+ this.onclickCreatePost = false;
+ this.onclickLogOut = false;
   switch(name){
     case "LogIn" :{
-      this.onclickLogIn = true;
+       this.onclickLogIn = true;
       break;
     }
     case "SignUp":{
-      this.onclickSignUp = true;
+       this.onclickSignUp = true;
       break;
     }
     case 'Profile':{
-      this.onclickProfile = true;
+       this.onclickProfile = true;
       changeClickedUser(CurrentUser);
       break;
     }
     case "Inbox":{
-      this.onclickInbox = true;
+       this.onclickInbox = true;
       break;
     }
     case "Social":{
-      this.onclickSocial = true;
-      break;
-    }
-    case "Groups":{
-      this.onclickGroups = true;
+       this.onclickSocial = true;
       break;
     }
     case "TopPost":{
-      this.onclickTopPost = true;
+       this.onclickTopPost = true;
       break;
     }
     case "TopGroupPost":{
-      this.onclickTopGroupPost = true;
+       this.onclickTopGroupPost = true;
       break;
     }
     case "TopBattles":{
-      this.onclickTopBattles = true;
+       this.onclickTopBattles = true;
       break;
     }
     case "TopFollowing":{
-      this.onclickTopFollowing = true;
+       this.onclickTopFollowing = true;
       break;
     }
     case "Home":{
-      this.onclickHome = true;
+       this.onclickHome = true;
       break;
     }
     case "Battles":{
-      this.onclickBattles = true;
+       this.onclickBattles = true;
       break;
     }
     case "YourPosts":{
-      this.onclickYourPosts = true;
+       this.onclickYourPosts = true;
       break;
     }
     case "LogOut":{
       LogOut();
-      this.onclickLogOut = true;
-      this.message = "logged out sucessfully";
-      this.onclickHome = true;
+       this.onclickLogOut = true;
+       this.message = "logged out sucessfully";
+       this.onclickHome = true;
       break;
     }
     case "CreatePost":{
-      this.onclickCreatePost = true;
+       this.onclickCreatePost = true;
       break;
     }
   }
 }
 
 }
-
