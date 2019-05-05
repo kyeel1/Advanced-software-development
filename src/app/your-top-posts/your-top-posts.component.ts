@@ -19,6 +19,9 @@ export class YourTopPostsComponent implements OnInit {
   findAllYourPosts(){
     for (let c = 0; c < this.ALLPOSTS.length; c++) 
     {
+      console.log(CurrentUser.posts.length)
+      console.log(CurrentUser.UserName)
+
         if (this.ALLPOSTS[c].Poster == CurrentUser )
         {
           this.YOURSORTEDPOSTS.push(this.ALLPOSTS[c])
@@ -62,6 +65,7 @@ export class YourTopPostsComponent implements OnInit {
   {
     this.findAllYourPosts()
     this.sortPosts(this.YOURSORTEDPOSTS)
+    console.log(this.YOURSORTEDPOSTS.length)
   }
 
 }

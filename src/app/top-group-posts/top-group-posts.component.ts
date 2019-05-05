@@ -16,6 +16,7 @@ export class TopGroupPostsComponent implements OnInit {
   GROUPS: GroupsModule[] = Database.GroupList
   CURRENTUSERGROUPS: GroupsModule[] = new Array;
   ALLGROUPPOSTS: PostsModule[] = new Array;
+  
 
   constructor() { }
  // i < this.GROUPS[c].UserList
@@ -25,9 +26,10 @@ export class TopGroupPostsComponent implements OnInit {
       console.log("loop")
       console.log(this.ALLGROUPS[c]);
       console.log(this.ALLGROUPS.length)
-      console.log(CurrentUser.groups[0])
+      console.log(CurrentUser.groups)
       for (let d = 0; d < CurrentUser.groups.length; d++) {
         console.log("loop2")
+        
       if (this.ALLGROUPS[c] = CurrentUser.groups[d])
       {
         
@@ -88,6 +90,10 @@ export class TopGroupPostsComponent implements OnInit {
     this.findAllGroups()
     this.sortTopGroupPosts()
     this.sortPosts(this.ALLGROUPPOSTS)
+    console.log(this.ALLGROUPPOSTS.length)
+    console.log(this.ALLGROUPS.length)
+    console.log(this.CURRENTUSERGROUPS.length)
+    console.log(this.ALLPOSTS.length)
   }
 
 }
