@@ -1,4 +1,9 @@
-<div class="course-card">
+ <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head> 
+
+<!----<div class="course-card">
   <div>
     <img src="{{post.Poster.Picture}}" width="75" height="75">
   </div>
@@ -22,13 +27,32 @@
   <button (click) = "ViewComments()" >view comments</button>
   <div *ngIf = "flag">
       <app-comments *ngFor="let C of AllComments"
-      [Comment] = "C"></app-comments>
+      [Comment] = "C">></app-comments>
   </div>
   <div>
       <button (click) = "AddComment()">Add Comment</button>
+  <div class="card border-primary">
+    <div class="card-header">
+      User: {{post.Poster.DisplayName}}       Points: {{post.Poster.Points}}
     </div>
     <div *ngIf = "flag2">
     <input #Coment type = "text">
     <button (click) = "submit(Coment.value)">Submit</button>
+    <div class="card-body">
+      <h5 class="card-title">
+        
+        <img src="{{post.Poster.Picture}}" alt="" class="img-thumbnail">
+      </h5>
+      <br><br>
+      <p class="card-text">{{post.Content}}</p><br><br><br><br>
+        <div class= "buttons" style="width:500px;">
+        <a class="btn btn-primary" (click) = "UpVote()">Up Vote</a>
+        
+        <a class="btn btn-primary" (click) = "DownVote()">Down Vote</a>
+        
+        <a class="btn btn-primary" (click) = "ViewComments()">View Comments</a>
+        </div>
     </div>
-  </div>
+  <!-- </div> -->
+  <br>
+</div>

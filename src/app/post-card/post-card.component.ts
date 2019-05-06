@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserModule } from '../user/user.module';
 import { PostsModule } from '../posts/posts.module';
 import {DatabaseModule, Database} from '../database/database.module';
@@ -17,9 +17,18 @@ export class PostCardComponent implements OnInit {
   AllComments:CommentModule[];
   flag = false;
   flag2 = false;
+  temp:PostsModule;
+  screenWidth = screen.width;
+  
+  AllComments:CommentModule[] = this.post.getCommentList();
   constructor() { }
 
   ngOnInit() {
+    for(var i = 0;i<Database.PostList.length;i++){
+      if(this.post == Database.PostList[i]){
+        this.temp = Database.PostList[i];
+      }
+    }
   }
   UpVote(){
     this.post.keepTrack(CurrentUser,"up");
@@ -37,4 +46,5 @@ export class PostCardComponent implements OnInit {
   submit(S){
     this.post.addComment(S);
   }
+
 }

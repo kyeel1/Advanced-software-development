@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { UserModule } from '../user/user.module';
 import { CommentModule } from '../comment/comment.module';
 import { CurrentUser } from '../log-in/log-in.component';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 @NgModule({
   declarations: [],
   imports: [
@@ -18,7 +17,7 @@ export class PostsModule {
   UpVotes:number = 0;
   DownVotes:number = 0;
   TotalVote:number = 0;
-  WhoVoted: UserModule[] = [];
+  WhoVoted: UserModule[] = new Array;
 
   UpdateTotal(){
     this.TotalVote = this.UpVotes - this.DownVotes;
@@ -34,28 +33,16 @@ export class PostsModule {
     this.UpdateTotal();
     this.Poster.AddPoints(-1);
   }   
-  keepTrack(voter : UserModule,upDown : String){//whenever someone votes on a post it will call this method and include who voted and which way they votes
-    var flag = true;
-    for(let i in this.WhoVoted){
-      console.log("Hello")
-      if(voter.DisplayName == this.WhoVoted[i].DisplayName)
-      console.log("Hello")
-        console.log(voter.Description)
-        console.log(this.WhoVoted[i].DisplayName)
-        flag = false;
     }
     if(flag){
     if(upDown == "up"){
-      console
       this.AddUpVote();
       this.WhoVoted.push(voter);
     }
     else{
       this.AddDownVote();
       this.WhoVoted.push(voter);
-
     }
-  }
   }
   getPoster():UserModule{
     return this.Poster

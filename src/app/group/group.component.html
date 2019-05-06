@@ -1,4 +1,4 @@
-<h1>{{GroupName}}</h1>
+<!-- <h1>{{GroupName}}</h1>
 <h2>Rules</h2>
 <div *ngFor="let p of CurrentRule">
     {{p}}
@@ -11,4 +11,27 @@
 <div>
 this displays wars
 </div>
-<button (click) = "JoinGroup()">Join this group</button>
+<button (click) = "JoinGroup()">Join this group</button> -->
+
+
+<div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{GroupName}}</h5>
+          <p class="card-text">Rules: </p>
+        </div>
+        <ul class="list-group list-group-flush">
+                <div *ngFor="let p of CurrentRule">
+                        <li class="list-group-item">{{p}}</li>
+                    </div>
+        </ul>
+        <p class="card-text">Members: </p>
+        <ul class="list-group list-group-flush">
+                <div  *ngFor="let p of GroupList">
+                        <li class="list-group-item">{{p.UserName}}</li>
+                    
+                    </div>
+        </ul>
+        <div class="card-body">
+          
+        </div>
+      </div>
