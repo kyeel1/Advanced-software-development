@@ -1,6 +1,10 @@
+<div id="social">
+        Search: 
 <input #Search type="text"  value="enter keyword">
+
 <button (click) = "SearchUsers(Search.value)">people</button>
 <button (click) = "SearchGroups(Search.value)">groups</button>
+</div>
 <div *ngIf = "ProfileFlag">
 <app-profile-page></app-profile-page>
 </div>
