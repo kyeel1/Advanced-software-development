@@ -13,7 +13,6 @@
           <button (click)="myClickFunction($event,'TopPost')">Top Posts</button>
           <button (click)="myClickFunction($event,'TopGroupPost')">Top Group Posts</button>
           <button (click)="myClickFunction($event,'TopFollowing')">Top Following</button>
-          <button (click)="myClickFunction($event,'TopBattles')">Top Battles</button>
           <button (click)="myClickFunction($event,'YourPosts')">Your Top Posts</button>
       </div>
     </div> 
@@ -44,14 +43,8 @@
 <div *ngIf = "onclickTopGroupPost">
   <app-top-group-posts></app-top-group-posts>
 </div>
-<div *ngIf = "onclickTopBattles">
-  Battles
-</div>
 <div *ngIf = "onclickHome">
     <app-home-page></app-home-page>
-</div>
-<div *ngIf = "onclickBattles">
-  <app-wars></app-wars>
 </div>
 <div *ngIf = "onclickYourPosts">
   <app-your-top-posts></app-your-top-posts>
