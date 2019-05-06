@@ -1,0 +1,20 @@
+<div>
+    <img src="{{post.Poster.Picture}}" width="75" height="75">
+  </div>
+  <div class="course-title">
+      <h3>{{Comment.Content}}</h3>
+  </div>
+
+  <div class="post-upvotes">
+      {{Comment.UpVotes}}
+      <button (click) = "UpVote()">Up vote</button>
+  </div>
+
+  <div>
+    {{Comment.DownVotes}}
+    <button (click) = "DownVote()">down vote</button>
+  </div>
+
+  <div>
+  {{Comment.TotalVote}}
+</div>

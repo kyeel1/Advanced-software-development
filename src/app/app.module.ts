@@ -19,6 +19,7 @@ import { from } from 'rxjs';
 import { PostCardComponent } from './post-card/post-card.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
     MessagingComponent,
     PostCardComponent,
     HomePageComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

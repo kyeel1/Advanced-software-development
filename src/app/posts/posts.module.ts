@@ -49,6 +49,12 @@ export class PostsModule {
       return true;
     }
   }
+  getPoster():UserModule{
+    return this.Poster
+  }
+  getCommentList():CommentModule[]{
+    return Comments;
+  }
   User: UserModule;//temp user replace later with the current logged in user
   addComment(content:string):void{
   let comment = new CommentModule(this.User ,content);
