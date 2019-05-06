@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserModule } from '../user/user.module';
 import { CommentModule } from '../comment/comment.module';
 import { CurrentUser } from '../log-in/log-in.component';
+import { CommentsComponent } from '../comments/comments.component';
 @NgModule({
   declarations: [],
   imports: [
@@ -13,7 +14,7 @@ export class PostsModule {
   constructor(P,C){this.Poster = P;this.Content = C,this.UpVotes = 0,this.DownVotes = 0}
   Poster: UserModule;
   Content:string ="";
-  Comments:CommentModule[];
+  Comments:CommentModule[] = new Array;
   UpVotes:number = 0;
   DownVotes:number = 0;
   TotalVote:number = 0;
@@ -59,5 +60,6 @@ export class PostsModule {
   User: UserModule;//temp user replace later with the current logged in user
   addComment(content:string):void{
   let comment = new CommentModule(this.User ,content);
+  this.Comments.push(comment);
   }
 }

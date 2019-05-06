@@ -94,3 +94,4 @@ export function createGroup(creator: UserModule, name: string){//when you call t
  post2.addComment("does this work");
  post3.addComment("does this work");
  post4.addComment("does this work");
+ console.log(post1);
