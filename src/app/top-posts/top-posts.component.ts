@@ -29,7 +29,6 @@ export class TopPostsComponent implements OnInit {
     //}
 
 
-    arr_name.sort(this.compare);
   }
 
   compare(a, b)

@@ -33,6 +33,11 @@ export class PostsModule {
     this.UpdateTotal();
     this.Poster.AddPoints(-1);
   }   
+  keepTrack(voter:UserModule,upDown : string){
+    var flag = true;
+    for(let i in this.WhoVoted){
+      if(voter.DisplayName == this.WhoVoted[i].DisplayName)
+      flag = false;
     }
     if(flag){
     if(upDown == "up"){
@@ -44,6 +49,7 @@ export class PostsModule {
       this.WhoVoted.push(voter);
     }
   }
+}
   getPoster():UserModule{
     return this.Poster
   }

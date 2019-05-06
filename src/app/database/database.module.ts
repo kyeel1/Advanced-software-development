@@ -81,13 +81,15 @@ export function createGroup(creator: UserModule, name: string){//when you call t
    ClickedUser=user;
  } 
  user1.AddFollower(user2);
+ user1.AddFollowing(user3);
  post1.AddUpVote();
  post2.AddUpVote();
  post2.AddUpVote();
  Database.GroupList[0].AddRule("1");
  Database.GroupList[0].AddRule("2");
  Database.GroupList[0].AddRule("3");
- group1.AddUser(user1);
+ user1.AddGroup(group1);
+ group1.AddUser(user1)
  post1.addComment("does this work");
  post2.addComment("does this work");
  post3.addComment("does this work");

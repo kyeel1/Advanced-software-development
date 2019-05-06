@@ -13,31 +13,13 @@ export class TopGroupPostsComponent implements OnInit {
 
   ALLPOSTS: PostsModule[] = Database.PostList
   ALLGROUPS: GroupsModule[] = Database.GroupList
-  GROUPS: GroupsModule[] = Database.GroupList
-  CURRENTUSERGROUPS: GroupsModule[] = new Array;
+  //CURRENTUSERGROUPS: GroupsModule[] = new Array;
   ALLGROUPPOSTS: PostsModule[] = new Array;
   
 
   constructor() { }
  // i < this.GROUPS[c].UserList
 
-  findAllGroups(){
-    for (let c = 0; c < this.ALLGROUPS.length; c++) {
-      console.log("loop")
-      console.log(this.ALLGROUPS[c]);
-      console.log(this.ALLGROUPS.length)
-      console.log(CurrentUser.groups)
-      for (let d = 0; d < CurrentUser.groups.length; d++) {
-        console.log("loop2")
-        
-      if (this.ALLGROUPS[c] = CurrentUser.groups[d])
-      {
-        
-        this.CURRENTUSERGROUPS.push(this.ALLGROUPS[c])
-      }
-      }
-    }
-  }
 
  // findAllGroups2(){
  //   for (let c = 0; c < this.ALLGROUPS.length; c++) {
@@ -94,7 +76,6 @@ export class TopGroupPostsComponent implements OnInit {
     console.log(this.ALLGROUPS.length)
     console.log(CurrentUser.groups)
     console.log(this.ALLPOSTS.length)
-    console.log()
   }
 
 }

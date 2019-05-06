@@ -14,12 +14,10 @@ import { CommentModule } from '../comment/comment.module';
 export class PostCardComponent implements OnInit {
 
   @Input() post: PostsModule = new PostsModule(CurrentUser,"");
-  AllComments:CommentModule[];
   flag = false;
   flag2 = false;
   temp:PostsModule;
   screenWidth = screen.width;
-  
   AllComments:CommentModule[] = this.post.getCommentList();
   constructor() { }
 

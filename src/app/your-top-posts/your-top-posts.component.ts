@@ -55,8 +55,8 @@ export class YourTopPostsComponent implements OnInit {
     let upvotesB = b.TotalVote;
 
     const comparison = 0;
-    if (upvotesA > upvotesB) { return 1; }
-    if (upvotesB > upvotesA) { return -1; }
+    if (upvotesA > upvotesB) { return -1; }
+    if (upvotesB > upvotesA) { return 1; }
     return 0;
 
   }

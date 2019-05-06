@@ -11,7 +11,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 })
 export class TopFollowersPostsComponent implements OnInit {
 
-  ALLPOSTS: PostsModule[] = Database.PostList;
+  ALLPOSTS: PostsModule[] = Database.PostList
   ALLFOLLOWERSPOSTS: PostsModule[] = new Array;
 
   constructor() { }
@@ -44,6 +44,8 @@ export class TopFollowersPostsComponent implements OnInit {
     let upvotesB = b.TotalVote;
 
     const comparison = 0;
+    if (upvotesA > upvotesB) { return -1; }
+    if (upvotesB > upvotesA) { return 1; }
     return 0;
 
   }

@@ -15,6 +15,8 @@ export class SocialComponent implements OnInit {
   ProfileFlag = false;
   GroupFlag = false;
   SearchGroups(S:string){
+    this.GroupFlag = false;
+    this.ProfileFlag = false;
     for(var i = 0;i<Database.GroupList.length;i++){
       if(Database.GroupList[i].GetName() == S){
         SetCurrentGroup(Database.GroupList[i]);
@@ -23,6 +25,8 @@ export class SocialComponent implements OnInit {
     }
   }
   SearchUsers(S:string){
+    this.GroupFlag = false;
+    this.ProfileFlag = false;
     for(var i = 0;i<Database.UserList.length;i++){
       if(Database.UserList[i].DisplayName == S){
         changeClickedUser(Database.UserList[i]);
