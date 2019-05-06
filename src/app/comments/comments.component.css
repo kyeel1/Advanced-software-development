@@ -1,0 +1,34 @@
+.card {
+    width: 100%;
+}
+
+.card-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em
+}
+
+.card-text {
+    text-align: center;
+}
+.btn .btn-primary {
+    display: inline-block;
+    text-align: center;
+}
+
+.card-img-top {
+    text-align: center;
+}
+
+.card-header {
+    width: 100%;
+    text-align: center;
+}
+.column{
+    width:25%;
+    text-align: center;
+}
+.columnSpacer{
+    width:30%;
+    text-align: center;
+}

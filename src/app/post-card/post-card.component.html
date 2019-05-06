@@ -1,39 +1,43 @@
- <head>
-  
-
-</head> 
-  
-      
-  <div class="card border-primary">
+<div class="card border-primary">
     <div class="card-header">
       User: {{post.Poster.DisplayName}}       Points: {{post.Poster.Points}}
     </div>
     
-    <div class="card-body">
+    <div >
       <h5 class="card-title">
         
         <img src="{{post.Poster.Picture}}" alt="" class="img-thumbnail">
       </h5>
       <br><br>
-      <p class="card-text">{{post.Content}}</p><br><br><br><br>
-        <div class= "buttons" style="width:500px;">
-          {{post.UpVotes}}
-        <a class="btn btn-primary" (click) = "UpVote()">Up Vote</a>
-          {{post.DownVotes}}
-        <a class="btn btn-primary" (click) = "DownVote()">Down Vote</a>
-          {{post.TotalVote}}
-        <a class="btn btn-primary" (click) = "ViewComments()">View Comments</a>
-        <a class="btn btn-primary" (click) = "AddComment()">Add Comment</a>
+      <h3 class="card-text">{{post.Content}} <br>{{post.TotalVote}}</h3><br><br><br>
+      <div class = "container">
+      <div class= "row" style="width:1000px;">
+           
+        <div class= "col text-center">
+            
+            <a class="btn btn-primary" (click) = "UpVote()">Up Vote</a><br>{{post.UpVotes}}
         </div>
-        <a class="btn btn-primary" (click) = "ViewComments()" >view comments</a>
+
+        <div class= "col text-center">
+        <a class="btn btn-primary" (click) = "DownVote()">Down Vote</a><br>{{post.DownVotes}}<br>
+        </div>
+        <div class= "col text-center">
+        <a class="btn btn-primary" (click) = "ViewComments()">View Comments</a>
+        </div>
+        <div class= "col text-center">
+        <a class="btn btn-primary" (click) = "AddComment()">Add Comment</a>
+      </div>
+      
+        </div>
         <div *ngIf = "flag">
         <app-comments *ngFor="let C of AllComments"
-          [Comment] = "C">></app-comments>
+          [Comment] = "C"></app-comments>
         </div>
         
         <div *ngIf = "flag2">
             <input #Coment type = "text">
-            <button (click) = "submit(Coment.value)">Submit</button>
+            <a class="btn btn-primary" (click) = "submit(Coment.value)">Submit</a>
+        </div>
         </div>
     </div>
   <br>

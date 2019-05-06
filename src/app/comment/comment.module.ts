@@ -28,13 +28,21 @@ UpdateTotal(){
   this.DownVotes += 1;
   this.UpdateTotal();
   }  
-  keepTrack(voter : UserModule,upDown : String){//whenever someone votes on a post it will call this method and include who voted and which way they votes
-    this.WhoVoted.push(voter);
+  keepTrack(voter:UserModule,upDown : string){
+    var flag = true;
+    for(let i in this.WhoVoted){
+      if(voter.DisplayName == this.WhoVoted[i].DisplayName)
+      flag = false;
+    }
+    if(flag){
     if(upDown == "up"){
       this.AddUpVote();
+      this.WhoVoted.push(voter);
     }
     else{
       this.AddDownVote();
+      this.WhoVoted.push(voter);
     }
   }
+}
 }

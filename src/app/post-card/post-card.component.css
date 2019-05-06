@@ -10,11 +10,10 @@
 
 .card-text {
     text-align: center;
-
 }
-.btn btn-primary {
+.btn .btn-primary {
     display: inline-block;
-    text-align: right;
+    text-align: center;
 }
 
 .card-img-top {
@@ -25,4 +24,11 @@
     width: 100%;
     text-align: center;
 }
-
+.column{
+    width:25%;
+    text-align: center;
+}
+.columnSpacer{
+    width:30%;
+    text-align: center;
+}

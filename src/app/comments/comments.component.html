@@ -1,18 +1,17 @@
 
   <div class="course-title">
-      <h3>{{Comment.Content}}</h3>
+      <h5>{{Comment.Content}} <br> {{Comment.TotalVote}}</h5>
   </div>
 
-  <div class="post-upvotes">
-      {{Comment.UpVotes}}
-      <button (click) = "UpVote()">Up vote</button>
+  <div class= "col text-left">
+            
+      <a class="btn btn-primary" (click) = "UpVote()">Up Vote</a><br>{{post.UpVotes}}
+  </div>
+
+  <div class= "col text-left">
+  <a class="btn btn-primary" (click) = "DownVote()">Down Vote</a><br>{{post.DownVotes}}<br>
   </div>
 
   <div>
-    {{Comment.DownVotes}}
-    <button (click) = "DownVote()">down vote</button>
-  </div>
-
-  <div>
-  {{Comment.TotalVote}}
+  
 </div>
