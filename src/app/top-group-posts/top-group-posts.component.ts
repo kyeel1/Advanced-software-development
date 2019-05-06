@@ -50,13 +50,13 @@ export class TopGroupPostsComponent implements OnInit {
 
   sortTopGroupPosts() {
 
-    for (let c = 0; c < this.CURRENTUSERGROUPS.length; c++)
+    for (let c = 0; c < CurrentUser.groups.length; c++)
     {
-      for (let d = 0; d < this.CURRENTUSERGROUPS[c].UserList.length; d++ )
+      for (let d = 0; d < CurrentUser.groups[c].UserList.length; d++ )
       {
         for(let a = 0; a < this.ALLPOSTS.length; a++)
         {
-          if (this.ALLPOSTS[a].Poster == this.CURRENTUSERGROUPS[c].UserList[d])
+          if (this.ALLPOSTS[a].Poster == CurrentUser.groups[c].UserList[d])
           {
             this.ALLGROUPPOSTS.push(this.ALLPOSTS[a])
           }
@@ -87,13 +87,14 @@ export class TopGroupPostsComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.findAllGroups()
+    
     this.sortTopGroupPosts()
     this.sortPosts(this.ALLGROUPPOSTS)
     console.log(this.ALLGROUPPOSTS.length)
     console.log(this.ALLGROUPS.length)
-    console.log(this.CURRENTUSERGROUPS.length)
+    console.log(CurrentUser.groups)
     console.log(this.ALLPOSTS.length)
+    console.log()
   }
 
 }
