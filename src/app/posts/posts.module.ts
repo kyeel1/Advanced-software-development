@@ -53,7 +53,7 @@ export class PostsModule {
     return this.Poster
   }
   getCommentList():CommentModule[]{
-    return Comments;
+    return this.Comments;
   }
   User: UserModule;//temp user replace later with the current logged in user
   addComment(content:string):void{

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GroupsModule } from '../groups/groups.module';
 import { UserModule } from '../user/user.module';
 import { PostsModule } from '../posts/posts.module';
+import { CommentModule } from '../comment/comment.module';
 
 
 @NgModule({
@@ -87,4 +88,4 @@ export function createGroup(creator: UserModule, name: string){//when you call t
  Database.GroupList[0].AddRule("2");
  Database.GroupList[0].AddRule("3");
  group1.AddUser(user1);
- 
+ post1.addComment("does this work");

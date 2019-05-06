@@ -13,7 +13,7 @@ import { CommentModule } from '../comment/comment.module';
 })
 export class PostCardComponent implements OnInit {
 
-  @Input() post: PostsModule;
+  @Input() post: PostsModule = new PostsModule(CurrentUser,"");
   flag = false;
   temp:PostsModule;
   
