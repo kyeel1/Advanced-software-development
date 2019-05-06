@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserModule } from '../user/user.module';
 import { PostsModule } from '../posts/posts.module';
 import {DatabaseModule, Database} from '../database/database.module';
@@ -14,9 +14,8 @@ import { CommentModule } from '../comment/comment.module';
 export class PostCardComponent implements OnInit {
 
   @Input() post: PostsModule = new PostsModule(CurrentUser,"");
+  AllComments:CommentModule[];
   flag = false;
-  
-  AllComments:CommentModule[] = this.post.Comments;
   constructor() { }
 
   ngOnInit() {
@@ -29,6 +28,7 @@ export class PostCardComponent implements OnInit {
   }
   ViewComments(){
     this.flag = true;
+    this.AllComments= this.post.Comments;
   }
 
 }
