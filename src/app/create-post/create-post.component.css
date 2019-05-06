@@ -1,4 +1,9 @@
-img{
-    width:100%;
-    max-width:300px;
-}
+ div{
+    margin: auto;
+    width: 50%;
+    border: 3px solid slategrey;
+    padding: 10px;
+  }
+  p{
+      text-align: center;
+  }
