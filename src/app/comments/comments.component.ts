@@ -8,7 +8,8 @@ import { CurrentUser } from '../log-in/log-in.component';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  @Input() Comment: CommentModule;
+  @Input() Comment: CommentModule = new CommentModule(CurrentUser,"");
+  
   constructor() { }
   
   ngOnInit() {
@@ -19,4 +20,5 @@ export class CommentsComponent implements OnInit {
   DownVote(){
     this.Comment.keepTrack(CurrentUser,"booooooooo");
   }
+
 }

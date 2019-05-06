@@ -15,17 +15,11 @@ export class PostCardComponent implements OnInit {
 
   @Input() post: PostsModule = new PostsModule(CurrentUser,"");
   flag = false;
-  temp:PostsModule;
   
-  AllComments:CommentModule[] = this.post.getCommentList();
+  AllComments:CommentModule[] = this.post.Comments;
   constructor() { }
 
   ngOnInit() {
-    for(var i = 0;i<Database.PostList.length;i++){
-      if(this.post == Database.PostList[i]){
-        this.temp = Database.PostList[i];
-      }
-    }
   }
   UpVote(){
     this.post.keepTrack(CurrentUser,"up");

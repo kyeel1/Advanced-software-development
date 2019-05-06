@@ -89,3 +89,6 @@ export function createGroup(creator: UserModule, name: string){//when you call t
  Database.GroupList[0].AddRule("3");
  group1.AddUser(user1);
  post1.addComment("does this work");
+ post2.addComment("does this work");
+ post3.addComment("does this work");
+ post4.addComment("does this work");
