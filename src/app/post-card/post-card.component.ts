@@ -16,6 +16,7 @@ export class PostCardComponent implements OnInit {
   @Input() post: PostsModule = new PostsModule(CurrentUser,"");
   AllComments:CommentModule[];
   flag = false;
+  flag2 = false;
   constructor() { }
 
   ngOnInit() {
@@ -30,5 +31,10 @@ export class PostCardComponent implements OnInit {
     this.flag = true;
     this.AllComments= this.post.Comments;
   }
-
+  AddComment(){
+    this.flag2 = true;
+  }
+  submit(S){
+    this.post.addComment(S);
+  }
 }

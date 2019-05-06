@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommentModule } from '../comment/comment.module';
 import { CurrentUser } from '../log-in/log-in.component';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-comments',
@@ -9,6 +10,7 @@ import { CurrentUser } from '../log-in/log-in.component';
 })
 export class CommentsComponent implements OnInit {
   @Input() Comment: CommentModule = new CommentModule(CurrentUser,"");
+  
   
   constructor() { }
   
@@ -20,5 +22,4 @@ export class CommentsComponent implements OnInit {
   DownVote(){
     this.Comment.keepTrack(CurrentUser,"booooooooo");
   }
-
 }

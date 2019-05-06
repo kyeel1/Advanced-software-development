@@ -24,5 +24,11 @@
       <app-comments *ngFor="let C of AllComments"
       [Comment] = "C"></app-comments>
   </div>
-
+  <div>
+      <button (click) = "AddComment()">Add Comment</button>
+    </div>
+    <div *ngIf = "flag2">
+    <input #Coment type = "text">
+    <button (click) = "submit(Coment.value)">Submit</button>
+    </div>
   </div>
